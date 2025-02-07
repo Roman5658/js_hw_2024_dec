@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b204071d-d952-443f-be64-afc99dbd1c17" name="Changes" comment="lesson 1" />
+    <list default="true" id="b204071d-d952-443f-be64-afc99dbd1c17" name="Changes" comment="lesson 1">
+      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_2/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_2/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,6 +58,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -76,6 +81,11 @@
       <workItem from="1738684852022" duration="458000" />
       <workItem from="1738685825186" duration="57000" />
       <workItem from="1738686338882" duration="334000" />
+      <workItem from="1738687215936" duration="583000" />
+      <workItem from="1738777804443" duration="5000" />
+      <workItem from="1738779036075" duration="14000" />
+      <workItem from="1738785082442" duration="3337000" />
+      <workItem from="1738935934167" duration="5747000" />
     </task>
     <task id="LOCAL-00001" summary="lesson 1">
       <option name="closed" value="true" />
@@ -93,7 +103,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738686636223</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="lesson 1">
+      <option name="closed" value="true" />
+      <created>1738728375562</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1738728375562</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
