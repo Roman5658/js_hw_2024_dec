@@ -87,9 +87,10 @@ let products = [
         image: 'https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=5.0.74'
     },
     {
+
         title: 'tea',
         price: 15,
-        image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
+        image: 'https://i.ytimg.com/vi/YfJvNNAFpaQ/sddefault.jpg'
     }
 ];
 
@@ -98,10 +99,11 @@ for (let i = 0; i < products.length; i++) {
     document.write(`
         <div class="product-card">
             <h3 class="product-title">${products[i].title}. Price - ${products[i].price}</h3>
-            <img src="${products[i].image}" alt="${products[i].title}" class="product-image">
+            <img src="${products[i].image}" alt="${products[i].title}" class="product-image" id="${products[i].title}">
         </div>
     `);
 }
+
 
 // ШАБЛОН
 // <div class="product-card">
@@ -148,3 +150,22 @@ for (let i = 0; i < users.length; i++) {
         console.log(users[i])
     }
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const teaImage = document.getElementById("tea");
+    const teaAudio = document.getElementById("tea-audio");
+
+    if (teaImage && teaAudio) {
+        teaImage.addEventListener("mouseenter", () => {
+            teaAudio.currentTime = 39.5;
+            teaAudio.play();
+        });
+
+        teaImage.addEventListener("mouseleave", () => {
+            teaAudio.pause();
+            teaAudio.currentTime = 15;
+        });
+    }
+});
+
