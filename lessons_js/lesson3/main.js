@@ -18,6 +18,7 @@ let temperature = [
 for (let i = 0; i < temperature.length; i++) {
    document.write(`<div>${temperature[i].day}</div>`);
 }
+document.write('<br><br>');
 
 // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
 for (let i = 0; i < 10; i++) {
