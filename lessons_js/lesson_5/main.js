@@ -137,10 +137,11 @@ const swap = (arr, index1, index2) => {
     }
 
     function error() {
+        return "Ошибка: Индексы выходят за пределы массива!"
 
     }
 
-    return error
+    return error();
 }
 console.log(swap([11,22,33,44],0,1))
 
@@ -155,7 +156,6 @@ const exchange = (sumUAH,currencyValues,exchangeCurrency) => {
             chosen = item;
         }
     }
-    let result = sumUAH/chosen.value
-    return result;
+    return sumUAH / chosen.value;
 }
 console.log(exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD'))
