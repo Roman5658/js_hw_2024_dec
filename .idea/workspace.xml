@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b204071d-d952-443f-be64-afc99dbd1c17" name="Changes" comment="lesson 5" />
+    <list default="true" id="b204071d-d952-443f-be64-afc99dbd1c17" name="Changes" comment="lesson 5">
+      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_6/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_6/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_7/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_7/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_8/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_8/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_9/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_9/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_9/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +43,9 @@
     &quot;accountId&quot;: &quot;842a9481-20bc-4807-ae76-10c6602eedc7&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -94,7 +108,12 @@
       <workItem from="1739281085917" duration="2000" />
       <workItem from="1739522893198" duration="9537000" />
       <workItem from="1740872496951" duration="623000" />
-      <workItem from="1741103785226" duration="9270000" />
+      <workItem from="1741103785226" duration="10147000" />
+      <workItem from="1741118030236" duration="3255000" />
+      <workItem from="1741189705461" duration="9957000" />
+      <workItem from="1741202377975" duration="1819000" />
+      <workItem from="1741268049305" duration="10036000" />
+      <workItem from="1741362085327" duration="13332000" />
     </task>
     <task id="LOCAL-00001" summary="lesson 1">
       <option name="closed" value="true" />
@@ -200,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741113106660</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="lesson 5">
+      <option name="closed" value="true" />
+      <created>1741113801030</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1741113801030</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
