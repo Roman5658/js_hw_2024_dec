@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b204071d-d952-443f-be64-afc99dbd1c17" name="Changes" comment="lesson 5">
-      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_6/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_6/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_7/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_7/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_8/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_8/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_9/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_9/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_9/main.js" afterDir="false" />
+    <list default="true" id="b204071d-d952-443f-be64-afc99dbd1c17" name="Changes" comment="lesson 6-9">
+      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_10/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_10/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessons_js/lesson_10/sessionsList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +107,9 @@
       <workItem from="1741189705461" duration="9957000" />
       <workItem from="1741202377975" duration="1819000" />
       <workItem from="1741268049305" duration="10036000" />
-      <workItem from="1741362085327" duration="13332000" />
+      <workItem from="1741362085327" duration="14361000" />
+      <workItem from="1741426915219" duration="12386000" />
+      <workItem from="1741470188417" duration="1603000" />
     </task>
     <task id="LOCAL-00001" summary="lesson 1">
       <option name="closed" value="true" />
@@ -227,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741113801030</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="lesson 6-9">
+      <option name="closed" value="true" />
+      <created>1741382616297</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1741382616297</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,6 +255,7 @@
     <MESSAGE value="lesson 3 audio" />
     <MESSAGE value="lesson 5 hw" />
     <MESSAGE value="lesson 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="lesson 5" />
+    <MESSAGE value="lesson 6-9" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson 6-9" />
   </component>
 </project>
