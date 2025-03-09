@@ -203,3 +203,37 @@ localStorage.setItem('currentPrice', currentPrice.toString());
 // при завантажені сторінки з'являються перші 10 об'єктів.
 //     При натисканні next виводяться наступні 10 об'єктів
 // При натисканні prev виводяться попередні 10 об'єктів
+
+const items = Array.from({ length: 100 }, (_, i) => `Item ${i + 1}`);
+let currentPage = 0;
+const itemsPerPage = 10;
+
+function renderItems() {
+    const list = document.getElementById("item-list");
+    list.innerHTML = "";
+    const startIndex = currentPage * itemsPerPage;
+    const visibleItems = items.slice(startIndex, startIndex + itemsPerPage);
+    visibleItems.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        list.appendChild(li);
+    });
+    document.getElementById("prev").disabled = currentPage === 0;
+    document.getElementById("next").disabled = startIndex + itemsPerPage >= items.length;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("prev").addEventListener("click", () => {
+        if (currentPage > 0) {
+            currentPage--;
+            renderItems();
+        }
+    });
+    document.getElementById("next").addEventListener("click", () => {
+        if ((currentPage + 1) * itemsPerPage < items.length) {
+            currentPage++;
+            renderItems();
+        }
+    });
+    renderItems();
+});

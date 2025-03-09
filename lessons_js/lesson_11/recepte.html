@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рецепты</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b2b7bf;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #recipes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .recipe-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 15px;
+            overflow-y: auto;
+            height: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .recipe-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .recipe-container h2 {
+            font-size: 1.25rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .recipe-container .recipe-info {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+        }
+
+        .recipe-container .recipe-info span {
+            display: block;
+            margin: 5px 0;
+        }
+
+        ol {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ol li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 5px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .ingredient {
+            font-size: 0.9rem;
+            color: #34495e;
+        }
+
+        .recipe-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        .tags {
+            font-size: 0.9rem;
+            color: #3498db;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Рецепты</h1>
+<div id="recipes"></div>
+
+<script>
+    const recipesDiv = document.getElementById('recipes');
+
+    fetch('https://dummyjson.com/recipes')
+        .then(response => response.json())
+        .then(data => {
+            const {recipes} = data;
+
+            recipes.forEach(recipe => {
+                const div = document.createElement('div');
+                div.classList.add('recipe-container');
+
+                // Информация о рецепте
+                const divInfo = document.createElement('div');
+                divInfo.classList.add('recipe-info');
+                divInfo.innerHTML = `
+                        <h2>${recipe.name}</h2>
+                        <img src="${recipe.image}" alt="${recipe.name}" class="recipe-image">
+                        <span><strong>Время подготовки:</strong> ${recipe.prepTimeMinutes || 'Не указано'} минут</span>
+                        <span><strong>Время готовки:</strong> ${recipe.cookTimeMinutes || 'Не указано'} минут</span>
+                        <span><strong>Порции:</strong> ${recipe.servings}</span>
+                        <span><strong>Калории на порцию:</strong> ${recipe.caloriesPerServing}</span>
+                        <span><strong>Сложность:</strong> ${recipe.difficulty}</span>
+                        <span><strong>Кухня:</strong> ${recipe.cuisine}</span>
+                        <span><strong>Рейтинг:</strong> ${recipe.rating} из 5</span>
+                        <span><strong>Количество отзывов:</strong> ${recipe.reviewCount}</span>
+                    `;
+
+                // Список ингредиентов
+                const ol = document.createElement('ol');
+                recipe.ingredients.forEach(ingredient => {
+                    const li = document.createElement('li');
+                    li.classList.add('ingredient');
+                    li.innerText = ingredient;
+                    ol.appendChild(li);
+                });
+
+                // Инструкции
+                const instructionsDiv = document.createElement('div');
+                instructionsDiv.innerHTML = `<strong>Инструкции:</strong><ol>${recipe.instructions.map(instruction => `<li>${instruction}</li>`).join('')}</ol>`;
+
+                // Теги
+                const tagsDiv = document.createElement('div');
+                tagsDiv.classList.add('tags');
+                tagsDiv.innerHTML = `<strong>Теги:</strong> ${recipe.tags.join(', ')}`;
+
+                div.appendChild(divInfo);
+                div.appendChild(ol);
+                div.appendChild(instructionsDiv);
+                div.appendChild(tagsDiv);
+                recipesDiv.appendChild(div);
+            });
+        })
+        .catch(error => {
+            console.error("Ошибка при получении данных:", error);
+        });
+</script>
+</body>
+</html>

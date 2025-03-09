@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзины</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #carts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .cart-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cart-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .cart-container h2 {
+            font-size: 1.25rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .cart-container .cart-info {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+        }
+
+        .cart-container .cart-info span {
+            display: block;
+            margin: 5px 0;
+        }
+
+        ol {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ol li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ecf0f1;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s ease;
+        }
+
+        ol li:hover {
+            background-color: #ecf0f1;
+        }
+
+        ol li img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+
+        ol li .product-info {
+            flex: 1;
+        }
+
+        ol li .product-info span {
+            display: block;
+            font-size: 0.9rem;
+            color: #34495e;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .quantity {
+            color: #16a085;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Список корзин</h1>
+<div id="carts"></div>
+
+<script>
+    const cartsDiv = document.getElementById('carts');
+    fetch('https://dummyjson.com/carts')
+        .then(value => value.json())
+        .then(cartsObject => {
+            const { carts } = cartsObject;
+            console.log(carts);
+
+            for (const cart of carts) {
+                const div = document.createElement('div');
+                div.classList.add('cart-container');
+
+                const userID = cart.userID !== undefined ? cart.userID : 'Не указан';
+
+                const divInfo = document.createElement('div');
+                divInfo.classList.add('cart-info');
+                divInfo.innerHTML = `
+                        <span><strong>Идентификатор корзины:</strong> ${cart.id}</span>
+                        <span><strong>Общая сумма:</strong> ${cart.total} ₽</span>
+                        <span><strong>Скидка:</strong> ${cart.discountedTotal} ₽</span>
+                        <span><strong>Пользователь:</strong> ${userID}</span>
+                        <span><strong>Всего товаров:</strong> ${cart.totalProducts}</span>
+                        <span><strong>Всего единиц:</strong> ${cart.totalQuantity}</span>
+                    `;
+
+                const ol = document.createElement('ol');
+                for (const product of cart.products) {
+                    const li = document.createElement('li');
+
+                    const img = document.createElement('img');
+                    img.src = product.thumbnail;
+
+                    const productInfo = document.createElement('div');
+                    productInfo.classList.add('product-info');
+                    productInfo.innerHTML = `
+                            <span><strong>Название:</strong> ${product.title}</span>
+                            <span><strong>Цена:</strong> <span class="price">${product.price} ₽</span></span>
+                            <span><strong>Количество:</strong> <span class="quantity">${product.quantity}</span></span>
+                            <span><strong>Общая стоимость:</strong> ${product.total} ₽</span>
+                            <span><strong>Скидка:</strong> ${product.discountPercentage}%</span>
+                            <span><strong>Скидочная цена:</strong> ${product.discountedTotal} ₽</span>
+                        `;
+
+                    li.append(img, productInfo);
+                    ol.appendChild(li);
+                }
+
+                div.append(divInfo, ol);
+                cartsDiv.appendChild(div);
+            }
+        })
+        .catch(error => {
+            console.error("Ошибка при получении данных:", error);
+        });
+</script>
+</body>
+</html>

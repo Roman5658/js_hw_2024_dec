@@ -8,6 +8,9 @@
     <title>Document</title>
 </head>
 <style>
+    *{
+        list-style: none;
+    }
     button {
         width: 80px;
         height: 30px;
@@ -21,6 +24,23 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    }
+
+    #next, #prev{
+        background: #4a5491;
+        width: 100px;
+        color:white;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    #next:hover{
+        background: #6a7cde;
+        width: 110px;
+
+    }
+    #prev:hover{
+        background: #6a7cde;
+        width: 110px;
     }
 
 </style>
@@ -63,6 +83,13 @@
 <div id="priceBlock">
     100грн
 </div>
+
+<ul id="item-list"></ul>
+<div class="prevNext">
+    <button id="prev">Prev</button>
+    <button id="next">Next</button>
+</div>
+
 
 <script src="main.js"></script>
 </body>
